@@ -51,5 +51,10 @@ public class Enemy : Unit
         cooldown = 0;
     }
 
+    private void OnDestroy()
+    {
+         GameObject.FindObjectsOfType<EnemySpawner>()[0].CountDown();
+        
+    }
 
 }

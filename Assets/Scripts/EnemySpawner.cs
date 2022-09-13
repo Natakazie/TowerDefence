@@ -1,19 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] enemyList;
     [SerializeField] int[] enemyCounts;
     [SerializeField] float spawnTimer;
+    [SerializeField] TextMeshProUGUI winText;
 
     float sinceLastSpawn;
     int emptyFields = 0;
+    int count = 0;
     // Start is called before the first frame update
     void Start()
     {
         sinceLastSpawn = spawnTimer;
+        foreach(int i in enemyCounts)
+        {
+            count += i;
+        }
+        winText.alpha = 0;
     }
 
     // Update is called once per frame
@@ -21,6 +29,12 @@ public class EnemySpawner : MonoBehaviour
     {
         //ABSTACTION
         SpawnFirstStep();
+        TriggerWin();
+    }
+    //ABSTRACTION
+    void TriggerWin()
+    {
+
     }
     //ABSTACTION
     void SpawnFirstStep()
@@ -56,5 +70,12 @@ public class EnemySpawner : MonoBehaviour
             SpawnSecondStep(who % enemyCounts.Length);
         }
 
+    }
+    public void CountDown()
+    {
+            count--;
+        if (count == 0){
+            winText.alpha = 1;
+        }
     }
 }
