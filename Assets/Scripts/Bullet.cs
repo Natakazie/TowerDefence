@@ -5,20 +5,25 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float shootSpeed;
+
+    private GameObject primaryTarget;
+
     public Vector3 direction
     {
         get;
         set;
     }
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         
     }
-
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Time.deltaTime * shootSpeed* direction );
+    }
+    private void HitCheck()
+    {
+        
     }
 }

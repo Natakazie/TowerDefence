@@ -57,17 +57,14 @@ public class Builder : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && selected >= 0)
         {
             Collider[] obsticles = Physics.OverlapBox(cursorTarget, houseBounds, loadout[selected].transform.rotation, house);
-            Debug.Log("Recognized");
             if (overGround && obsticles.Length == 0)
             {
                 GameObject placed = Instantiate(loadout[selected], loadout[selected].transform.position, loadout[selected].transform.rotation);
                 placed.layer = houseLayer;
                 placed.GetComponent<BoxCollider>().enabled = true;
                 placed.GetComponent<Unit>().OnCreate();
-                Debug.Log("Done");
                 return;
             }
-            Debug.Log("can't Build here " + obsticles.Length + " " + house.value + " " + houseLayer);
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
