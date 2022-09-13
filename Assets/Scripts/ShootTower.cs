@@ -7,7 +7,7 @@ public class ShootTower : Unit
     [SerializeField] float shootRate;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform spawn;
-    GameObject[] bullets = new GameObject[20];
+    GameObject[] bullets = new GameObject[5];
     bool placed = false;
 
     float sinceLastShot;
@@ -45,9 +45,14 @@ public class ShootTower : Unit
             bullets[curBullet].SetActive(true);
             bullets[curBullet].transform.SetPositionAndRotation(spawn.position, spawn.rotation);
             curBullet++;
-            curBullet %= 20;
+            curBullet %= bullets.Length;
             sinceLastShot = shootRate;
         }
         
+    }
+    public override void OnCreate()
+    {
+        
+        placed = true;
     }
 }

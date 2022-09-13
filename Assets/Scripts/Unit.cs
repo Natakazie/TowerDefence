@@ -10,15 +10,8 @@ public class Unit : MonoBehaviour
 
     bool faction;
 
-    // Start is called before the first frame update
-    void Start()
+    public virtual void OnCreate()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
