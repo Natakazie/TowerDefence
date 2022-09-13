@@ -6,9 +6,9 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] float shootSpeed;
     [SerializeField] float damage = 3;
-    private GameObject primaryTarget;
 
     private bool faction;
+    // ENCAPSULATION
     public Vector3 direction
     {
         get;
@@ -22,8 +22,10 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.Translate(Time.deltaTime * shootSpeed* direction );
+        //ABSTACTION
         HitCheck();
     }
+    //ABSTACTION
     private void HitCheck()
     {
        Collider[] hit = Physics.OverlapSphere(transform.position, 0.05f);

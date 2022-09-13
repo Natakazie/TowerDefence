@@ -19,8 +19,10 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ABSTACTION
         SpawnFirstStep();
     }
+    //ABSTACTION
     void SpawnFirstStep()
     {
         if (emptyFields < enemyList.Length)
@@ -28,6 +30,7 @@ public class EnemySpawner : MonoBehaviour
             if (sinceLastSpawn <= 0)
             {
                 int who = Random.Range(0, enemyList.Length);
+                //ABSTACTION
                 SpawnSecondStep(who);
                 sinceLastSpawn = spawnTimer;
             }
@@ -36,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
 
-
+    //ABSTACTION
     void SpawnSecondStep(int who)
     {
         if (enemyCounts[who] > 0)

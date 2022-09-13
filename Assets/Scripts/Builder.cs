@@ -32,11 +32,13 @@ public class Builder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ABSTACTION
         ScanPosition();
         HandleCursor();
 
 
     }
+    //ABSTACTION
     void ScanPosition()
     {
         overGround = Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition), out hit, 100f, floor);
@@ -51,6 +53,7 @@ public class Builder : MonoBehaviour
         }
 
     }
+    //ABSTACTION
     void HandleCursor()
     {
 

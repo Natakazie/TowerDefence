@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//INHERITANCE
 public class Enemy : Unit
 {
     [SerializeField] float movementSpeed;
@@ -18,9 +19,10 @@ public class Enemy : Unit
         {
             transform.Translate(Time.deltaTime * movementSpeed * direction.normalized);
         }
+        //ABSTACTION
         ActionCondition();
     }
-
+    //POLYMORPHISM
     protected override void ActionCondition()
     {
 

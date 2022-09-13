@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//INHERITANCE
 public class ShootTower : Unit
 {
     [SerializeField] float shootRate;
@@ -21,8 +22,10 @@ public class ShootTower : Unit
             return;
         }
         ActionCondition();
+        //ABSTACTION
         Shoot();
     }
+    //ABSTACTION
     void Shoot()
     {
         if (!shooting)
@@ -42,6 +45,7 @@ public class ShootTower : Unit
 
 
     }
+    //POLYMORPHISM
     public override void OnCreate()
     {
         base.OnCreate();
@@ -57,6 +61,7 @@ public class ShootTower : Unit
         }
         sinceLastShot = shootRate;
     }
+    //POLYMORPHISM
     protected override void ActionCondition()
     {
         Collider[] hits = Physics.OverlapBox(transform.position + transform.forward * 5, new Vector3(0.5f, 0.5f, 5),transform.rotation);
