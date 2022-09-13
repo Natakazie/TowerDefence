@@ -108,5 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53a43f07b66b0341b4b7d4609963575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  damageModifier: 0
+  health: 10
+  damageModifier: 1
+  faction: 0
