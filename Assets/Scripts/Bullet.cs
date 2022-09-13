@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] float shootSpeed;
     public Vector3 direction
     {
         get;
@@ -18,6 +19,6 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Time.deltaTime * shootSpeed* direction );
     }
 }
