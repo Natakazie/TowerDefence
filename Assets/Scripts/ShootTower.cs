@@ -51,6 +51,7 @@ public class ShootTower : Unit
             {
                 bullets[i] = Instantiate(bullet, spawn.position, transform.rotation);
                 bullets[i].GetComponent<Bullet>().direction = transform.forward;
+                bullets[i].GetComponent<Bullet>().Allign(faction);
                 bullets[i].SetActive(false);
             }
         }

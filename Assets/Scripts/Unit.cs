@@ -29,5 +29,9 @@ public class Unit : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         health -= dmg * damageModifier;
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
